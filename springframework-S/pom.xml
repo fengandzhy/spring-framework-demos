@@ -11,6 +11,7 @@
     <modules>
         <module>spring-factory-model</module>
         <module>springframework-ioc-demo01</module>
+        <module>springframework-ioc-factorybean</module>
     </modules>
 
     <dependencies>
