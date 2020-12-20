@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="dbparameters" class="org.zhouhy.springframework.entity.DBParameters">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/springframework-s?useSSL=false"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+    
+    <bean id="connection" class="org.zhouhy.springframework.factorybean.ConnectionFactoryBean">
+        <property name="dbParameters" ref="dbparameters"/>
+    </bean>
+
+    <bean id="connfactory" class="org.zhouhy.springframework.factorybean.ConnectionFactory"/>
+    <bean id="conn" factory-bean="connfactory" factory-method="createConnection"/>
+
+    <bean id="conn1" class="org.zhouhy.springframework.factorybean.StaticConnectionFactory" 
+          factory-method="createConnection"/>
+</beans>
