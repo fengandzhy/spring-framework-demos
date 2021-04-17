@@ -1,13 +1,11 @@
 package org.zhouhy.spring.bean;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Set;
+import java.util.*;
 
 public class Account {
     private Integer Id;
     private String name;
+    private String[] array;
     private List<String> list;
     private Set<Address> set;
     private Map<String,String> map;
@@ -68,5 +66,27 @@ public class Account {
 
     public void setProperties(Properties properties) {
         this.properties = properties;
+    }
+
+    public String[] getArray() {
+        return array;
+    }
+
+    public void setArray(String[] array) {
+        this.array = array;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "Id=" + Id +
+                ", name='" + name + '\'' +
+                ", array=" + Arrays.toString(array) +
+                ", list=" + list +
+                ", set=" + set +
+                ", map=" + map +
+                ", users=" + users +
+                ", properties=" + properties +
+                '}';
     }
 }

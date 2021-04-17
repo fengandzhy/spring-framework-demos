@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.zhouhy.spring.bean.Account;
 import org.zhouhy.spring.bean.Address;
 import org.zhouhy.spring.bean.Student;
 import org.zhouhy.spring.bean.User;
@@ -48,6 +49,22 @@ public class IOCTest {
 
         Student stu2 = applicationContext.getBean("stu2",Student.class);
         System.out.println(stu2.toString());
+    }
+
+    @Test
+    public void collectionTest(){
+        ApplicationContext applicationContext
+                = new ClassPathXmlApplicationContext("application.xml");
+
+        Account account = applicationContext.getBean("account",Account.class);
+        
+        System.out.println(account.getArray());
+        System.out.println(account.getList());
+        System.out.println(account.getSet());
+        System.out.println(account.getMap());
+        System.out.println(account.getUsers());
+        System.out.println(account.getProperties());
+        
     }
     
 }

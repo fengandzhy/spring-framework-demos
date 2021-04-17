@@ -87,6 +87,57 @@
     </bean>
     
     <!--*********************************************************以上是自定义转换器的内容*****************************************-->
+    <!--
+        主要注意配置的配置基本类型和引用类型的区别, 另外当配置properties 不能写成<prop key="1" value="one"></prop>
+        这点跟map是不同的,另外需要注意的是, properties 没有引用类型    
+    -->
+    
+    <bean id="account" class="org.zhouhy.spring.bean.Account">
+        <property name="id" value="1"/>
+        <property name="name" value="Sam"/>
+        <property name="array">
+            <array>
+                <value>abc</value>
+                <value>2</value>
+                <value>bcd</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>3</value>
+                <value>qwq</value>
+                <value>"qwq"</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <ref bean="address1"></ref>
+                <ref bean="address2"></ref>
+                <ref bean="address3"></ref>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="a" value="AAA"/>
+                <entry key="b" value="BBB"/>
+                <entry key="c" value="CCC"/>
+            </map>
+        </property>
+        <property name="users">
+            <map>
+                <entry key="user1" value-ref="user1"/>
+                <entry key="user2" value-ref="user2"/>
+                <entry key="user3" value-ref="user3"/>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="1">one</prop>
+                <prop key="2">two</prop>
+            </props>
+        </property>       
+    </bean>
+    <!--***********************************************************以上是关于集合类的配置*******************************************-->
     
     
 </beans>
