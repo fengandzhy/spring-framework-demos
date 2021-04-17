@@ -13,6 +13,7 @@
         <module>springframework-ioc-demo01</module>
         <module>springframework-ioc-factorybean</module>
         <module>springframework-ioc-lifecycle</module>
+        <module>springframework-aop-proxy</module>
     </modules>
 
     <dependencies>
