@@ -54,7 +54,39 @@
     
     
     <!--*****************************************************以上是setter注入的**********************************************-->
+
+    <!--
+    关于这个自定义转换器
+        1. 转换器必须实现Converter接口, 并在convert方法里实现转换的内容
+        2. 转换器必须注册在 ConversionServiceFactoryBean
+        3. ConversionServiceFactoryBean 必须有id 而且必须id="conversionService"    
+    -->
     
+    <bean id="stu1" class="org.zhouhy.spring.bean.Student">
+        <property name="id" value="1"/>
+        <property name="name" value="Sam"/>
+        <property name="birthday" value="2001-10-24"/>
+    </bean>
+
+    <bean id="stu2" class="org.zhouhy.spring.bean.Student">
+        <property name="id" value="1"/>
+        <property name="name" value="Frank"/>
+        <property name="birthday" value="2002-12-23"/>
+    </bean>
+    
+    <bean id="myDateConverter" class="org.zhouhy.spring.converter.MyDateConverter">
+        <property name="pattern" value="yyyy-MM-dd"/>
+    </bean>
+    
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <ref bean="myDateConverter"/>
+            </set>
+        </property>
+    </bean>
+    
+    <!--*********************************************************以上是自定义转换器的内容*****************************************-->
     
     
 </beans>

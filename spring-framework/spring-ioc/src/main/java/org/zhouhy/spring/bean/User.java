@@ -25,9 +25,7 @@ public class User {
         this.Id = Id;
         this.username = username;
         this.password = password;
-    }
-
-    
+    }   
 
     public Integer getId() {
         return Id;

@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.zhouhy.spring.bean.Address;
+import org.zhouhy.spring.bean.Student;
 import org.zhouhy.spring.bean.User;
 
 @Slf4j
@@ -32,9 +33,21 @@ public class IOCTest {
                 = new ClassPathXmlApplicationContext("application.xml");
 
         Address address = applicationContext.getBean("address1",Address.class);
-        System.out.println(address.toString());
-        
+        System.out.println(address.toString());    
 
+    }
+
+
+    @Test
+    public void converterTest(){
+        ApplicationContext applicationContext
+                = new ClassPathXmlApplicationContext("application.xml");
+
+        Student stu1 = applicationContext.getBean("stu1",Student.class);
+        System.out.println(stu1.toString());
+
+        Student stu2 = applicationContext.getBean("stu2",Student.class);
+        System.out.println(stu2.toString());
     }
     
 }
