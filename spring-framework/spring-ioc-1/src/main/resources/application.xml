@@ -137,7 +137,44 @@
             </props>
         </property>       
     </bean>
+    
+    
     <!--***********************************************************以上是关于集合类的配置*******************************************-->
+
+    <!--
+        1. 关于这个循环依赖的一定是setter方法注入, spring 可以很好的解决循环依赖的问题, 不能用构造器注入的方式来注入循环依赖,
+        例如在本例中circleBeanA2 与 circleBeanB2 互相依赖, 而且两个都是构造器注入就有问题了
+        就是说循环依赖必须有一个是setter方法注入,不能全部都是constructor 注入, 否则bean就无法创建
+        
+        2. 关于两个循环依赖的类, toString 方法要特别注意, 不能造成死循环. 
+        
+        
+    -->
+    <bean id="circleBeanA1" class="org.zhouhy.spring.bean.CircleBeanA">
+        <property name="id" value="1"/>
+        <property name="name" value="A1"/>
+        <property name="circleBeanB" ref="circleBeanB1"></property>
+    </bean>
     
-    
+    <bean id="circleBeanB1" class="org.zhouhy.spring.bean.CircleBeanB">
+        <property name="id" value="2"/>
+        <property name="name" value="B1"/>
+        <property name="circleBeanA" ref="circleBeanA1"/>
+    </bean>
+
+    <!--<bean id="circleBeanA2" class="org.zhouhy.spring.bean.CircleBeanA">-->
+        <!--<constructor-arg type="java.lang.Integer" value="2"/> -->
+        <!--<constructor-arg type="java.lang.String" value="A2"/>-->
+        <!--<constructor-arg type="org.zhouhy.spring.bean.CircleBeanB" ref="circleBeanB2"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="circleBeanB2" class="org.zhouhy.spring.bean.CircleBeanB">-->
+        <!--<constructor-arg type="java.lang.Integer" value="2"/>-->
+        <!--<constructor-arg type="java.lang.String" value="B2"/>-->
+        <!--<constructor-arg type="org.zhouhy.spring.bean.CircleBeanA" ref="circleBeanA2"/>-->
+    <!--</bean>-->
+   
+    <!--*********************************************************************以上是关于循环依赖***************************************-->
+
+
 </beans>

@@ -15,7 +15,11 @@ package org.zhouhy.spring;
  * 
  * 5. 关于setter注入, 是通过set方法注入依赖, 具体的请参看本例的 address1, address2, address3 的注入
  * 
+ * 6. 关于自定义转换器的方法, 请参看本例当中的 stu1 stu2 的定义方法, 它自己编写了一个类型转换器myDateConverter 来负责将yyyy-MM-dd转成Date类型
  * 
+ * 7. 关于这个集合配置, 请参考本例的account 配置方法
+ * 
+ * 8. 
  * 
  * 
  * */

@@ -4,10 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.zhouhy.spring.bean.Account;
-import org.zhouhy.spring.bean.Address;
-import org.zhouhy.spring.bean.Student;
-import org.zhouhy.spring.bean.User;
+import org.zhouhy.spring.bean.*;
 
 @Slf4j
 public class IOCTest {
@@ -65,6 +62,24 @@ public class IOCTest {
         System.out.println(account.getUsers());
         System.out.println(account.getProperties());
         
+    }
+
+
+    @Test
+    public void circleDependencyTest(){
+        ApplicationContext applicationContext
+                = new ClassPathXmlApplicationContext("application.xml");
+
+        CircleBeanA circleBeanA = applicationContext.getBean("circleBeanA1",CircleBeanA.class);
+        CircleBeanB circleBeanB = applicationContext.getBean("circleBeanB1",CircleBeanB.class);
+        
+        System.out.println(circleBeanA.getCircleBeanB().getName());
+        System.out.println(circleBeanB.getCircleBeanA().getName());
+        
+        //System.out.println(circleBeanA.toString());
+
+//        CircleBeanA circleBeanA2 = applicationContext.getBean("circleBeanA2",CircleBeanA.class);
+//        CircleBeanB circleBeanB2 = applicationContext.getBean("circleBeanB2",CircleBeanB.class);
     }
     
 }
