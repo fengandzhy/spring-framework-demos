@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!--这个构造器确保原类当中要有这样的构造器,那就是参数都是两个String 的-->
+    <bean id="user1" class="org.zhouhy.spring.bean.User">
+        <constructor-arg type="java.lang.String" value="AA"/>
+        <constructor-arg type="java.lang.String" value="123456"/>
+    </bean>
+    
+    <!--这里的xml会自动检测类型, 例如 index="2" 的 value="a" 它会报错,与它的类型不匹配-->
+    <bean id="user2" class="org.zhouhy.spring.bean.User">
+        <constructor-arg index="0" value="AA"/>
+        <constructor-arg index="1" value="123456"/>
+        <constructor-arg index="2" value="1"/>
+    </bean>
+
+    <!--
+    这种注入的方式需要两个参数的构造器, 原类中有两个符合这种参数的构造器, 两个都是string, 两个都是Integer,
+    但是spring 还是优先选取了两个string类型的构造器, 因为这个不需要做类型转换.
+    注入的是string类型, spring是要通过转换才能变成Integer 类型    
+    -->
+    <bean id="user3" class="org.zhouhy.spring.bean.User">
+        <constructor-arg index="0" value="22"/>
+        <constructor-arg index="1" value="33"/>        
+    </bean>
+    
+    
+    <!--*************************************************以上是构造器注入的**************************************************-->
+    
+    
+    <!--
+    关于setter方法注入有这么两点需要注意
+        1. 原类必须要有空构造器, 因为spring是通过原类的空构造器来创建实例的
+        2. 注入属性的时候,原类必须要有相应的setter方法, 例如注入detail, 原类就要有setDetail方法
+        3. 就是原类的空构造器如果是private的, 这并不妨碍spring创建这个实例.
+     -->
+    <bean id="address1"  class="org.zhouhy.spring.bean.Address">
+        <property name="id" value="1"/>
+        <property name="detail" value="ABC"/>
+    </bean>
+
+    <bean id="address2"  class="org.zhouhy.spring.bean.Address">
+        <property name="id" value="2"/>
+        <property name="detail" value="DEF"/>
+    </bean>
+
+    <bean id="address3"  class="org.zhouhy.spring.bean.Address">
+        <property name="id" value="2"/>
+        <property name="detail" value="DEF"/>
+    </bean>
+    
+    
+    <!--*****************************************************以上是setter注入的**********************************************-->
+    
+    
+    
+</beans>
