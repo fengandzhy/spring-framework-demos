@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.zhouhy.spring.bean.*;
 
 @Slf4j
-public class IOCTest {
+public class IOCTest1 {
     
     @Test
     public void constructorTest(){
@@ -80,6 +80,16 @@ public class IOCTest {
 
 //        CircleBeanA circleBeanA2 = applicationContext.getBean("circleBeanA2",CircleBeanA.class);
 //        CircleBeanB circleBeanB2 = applicationContext.getBean("circleBeanB2",CircleBeanB.class);
+    }
+
+    @Test
+    public void specialCharacterTest(){
+        ApplicationContext applicationContext
+                = new ClassPathXmlApplicationContext("application.xml");
+
+        Teacher teacher = applicationContext.getBean("teacher",Teacher.class);
+        System.out.println(teacher.toString());
+        
     }
     
 }

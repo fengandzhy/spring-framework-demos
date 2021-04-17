@@ -19,9 +19,17 @@ package org.zhouhy.spring;
  * 
  * 7. 关于这个集合配置, 请参考本例的account 配置方法
  * 
- * 8. 
+ * 8. 关于这个特殊字符的注入, 请参考本例的teacher 配置方法
  * 
- * 
+ * 9 关于ApplicationContext 和 BeanFactory 的区别
+ *  1) BeanFactroy采用的是延迟加载形式来注入Bean的，即只有在使用到某个Bean时(调用getBean())，
+ *  才对该Bean进行加载实例化，这样，我们就不能发现一些存在的Spring的配置问题 *  
+ *  2) ApplicationContext则相反，它是在容器启动时，一次性创建了所有的Bean。这样，在容器启动时，我们就可以发现Spring中存在的配置错误。 *  
+ *  3) ApplicationContext 可以实现自动的 BeanPostProcessor 和 BeanFactoryPostProcessor注册
+ *  4) BeanFactory 只能手动注册BeanPostProcessor 和 BeanFactoryPostProcessor
+ *  5) ApplicationContext 可以实现访问资源  Resource rs = ctx. getResource(“classpath:config.properties”)
+ *  6) ApplicationContext 可以实现事件传播
+ *  
  * */
 public class App {
     public static void main(String[] args) {

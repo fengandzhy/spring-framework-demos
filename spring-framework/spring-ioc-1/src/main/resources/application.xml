@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
     
     <!--这个构造器确保原类当中要有这样的构造器,那就是参数都是两个String 的-->
     <bean id="user1" class="org.zhouhy.spring.bean.User">
@@ -175,6 +175,30 @@
     <!--</bean>-->
    
     <!--*********************************************************************以上是关于循环依赖***************************************-->
+
+    <!--
+        1. 特殊字符的注入, 它一定是<value><![CDATA[<admin>]]></value> 这种形式,不可能写成<property name="password" value="<![CDATA[<admin>]]>">
+        这个是特殊字符不允许的
+        
+        2. 关于这个集合注入, 你可以把集合抽象出来, 这样的话students这个集合可以被用在任何地方,不仅仅是teacher 类里面
+         
+    -->
+    
+    <bean id="teacher" class="org.zhouhy.spring.bean.Teacher">
+        <property name="id" value="1"/>
+        <property name="name" value="Sam"/>
+        <property name="password">
+            <value><![CDATA[<admin>]]></value>
+        </property>
+        <property name="studentList" ref="students"/>
+    </bean>
+    
+    <util:list id="students">
+        <ref bean="stu1"/>
+        <ref bean="stu2"/>
+    </util:list>
+
+    <!--***********************************************************************以上是特殊字符和另外一种集合注入****************************-->
 
 
 </beans>
