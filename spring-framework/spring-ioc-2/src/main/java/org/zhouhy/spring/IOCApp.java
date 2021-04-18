@@ -8,7 +8,7 @@ package org.zhouhy.spring;
  *  3) 传播者 继承了 ApplicationContextAware 的类, 在这个类当中的ApplicationContext 是spring自动注入的
  *  4) 在spring 容器里只需要注册传播者和监听者, 不需要注册事件源.
  *  
- * 
+ * 2. 关于spring 的自动装配请参看本例的几个例子, spring 一共有三种方式自动装配 byName, byType, constructor
  * 
  * */
 public class IOCApp {

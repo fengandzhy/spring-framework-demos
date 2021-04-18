@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.zhouhy.spring.bean.*;
 
-@Slf4j
+//@Slf4j
 public class IOCTest1 {
     
     @Test

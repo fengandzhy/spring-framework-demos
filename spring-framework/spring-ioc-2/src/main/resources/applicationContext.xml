@@ -7,5 +7,58 @@
     <bean id="actionListener" class="org.zhouhy.spring.listener.ActionListener"/>
     <bean id="loginAction" class="org.zhouhy.spring.aware.LoginAction"/>
     
+    <!--******************************************************************以上是ApplicationContext事件发布的bean********************-->
+
+    <!--
+        byName 装配, 一定要确保属性名和bean的id相等, 就是user里面必须有一个属性名是role的才能把bean id="role" 装配进去
+    -->
+    <bean id="role" class="org.zhouhy.spring.bean.Role">
+        <property name="id" value="1"/>
+        <property name="name" value="admin"/>
+    </bean>
     
+    <bean id="user" class="org.zhouhy.spring.bean.User" autowire="byName">
+        <property name="id" value="1"/>
+        <property name="username" value="Sam"/>
+        <property name="password" value="123"/>
+    </bean>
+
+
+    <!--
+        byType 装配, spring会根据原类(person)所需要的类型(Room), 来到容器中查找合适的类型给原类(person)装配
+        但如果有不止一个符合类型要求的bean的话, 就会报错. 所以要在其他bean上加入autowire-candidate="false" 
+        只要确保有一个符合类型要求的bean即可
+        
+        另外byType一定需要setter方法
+    -->
+    <bean id="room1" class="org.zhouhy.spring.bean.Room" autowire-candidate="false">
+        <property name="id" value="1"/>
+        <property name="name" value="A"/>
+    </bean>
+    
+    <bean id="room2" class="org.zhouhy.spring.bean.Room">
+        <property name="id" value="2"/>
+        <property name="name" value="B"/>
+    </bean>
+    
+    <bean id="person" class="org.zhouhy.spring.bean.Person" autowire="byType">
+        <property name="id" value="1"/>
+    </bean>
+
+    <!--
+        constructor 自动装配, spring 会检查bean构造器的入参, 然后在容器中找到与这个构造器入参类型完全匹配的bean传入这个构造器
+        并利用这个构造器来创建bean.       
+                
+    -->
+    
+    <bean id="manager" class="org.zhouhy.spring.bean.Manager">
+        <property name="id" value="1"/>
+        <property name="name" value="A"/>        
+    </bean>
+    
+    <bean id="employee" class="org.zhouhy.spring.bean.Employee" autowire="constructor">        
+    </bean>
+    
+    <!--***********************************************以上是关于自动装配的**************************************************-->
+
 </beans>
