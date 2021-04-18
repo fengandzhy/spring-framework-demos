@@ -23,6 +23,8 @@ package org.zhouhy.spring;
  * 5. 关于这个lazy-init="true"的, 当设置lazy-init="true"的时候, 它不会再ApplicationContext启动的时候创建bean, 只有在
  * getBean 调用的时候才会去创建bean, 无论scope设置成什么, 只要lazy-init="true" 它都不会再容器启动的时候创建bean
  * 
+ * 6. 关于这个default-lazy-init 属性是加在<beans>标签上的, 用来设置这个配置文件里所有的bean是不是延迟加载
+ * 
  * 
  * 
  * */

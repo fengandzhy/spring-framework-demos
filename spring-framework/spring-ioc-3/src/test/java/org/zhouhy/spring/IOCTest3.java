@@ -45,6 +45,6 @@ public class IOCTest3 {
         ApplicationContext applicationContext
                 = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        //Bean bean = applicationContext.getBean("bean",Bean.class);
+        Bean bean = applicationContext.getBean("bean",Bean.class);
     }
 }
