@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans           
        http://www.springframework.org/schema/beans/spring-beans.xsd">
     
     <bean id="department" class="org.zhouhy.spring.bean.Department">
@@ -31,12 +32,15 @@
     -->
     <bean id="user1" class="org.zhouhy.spring.bean.User" parent="department"/>    
     
-    <!--**************************************************************以上是关于abstract和parent的设置细节***********************-->
-
-    
+    <!--****************************************************以上是关于abstract和parent的设置细节*****************************-->    
     
     <bean id="sysinit" class="org.zhouhy.spring.bean.SystemInit"/>
     <bean id="cacheManager" class="org.zhouhy.spring.bean.CacheManager"  depends-on="sysinit"/>
+
+    <!--****************************************************以上是关于depends-on设置*********************************************-->
+    
+    <bean id="car" class="org.zhouhy.spring.bean.Car" p:id="1" p:brand="aaa" scope="prototype"/>
+        
     
     
 </beans>

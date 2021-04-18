@@ -13,7 +13,12 @@ package org.zhouhy.spring;
  * 并不是说cacheManager 依赖于 sysinit 而是按照业务的需要, cacheManager 必须要在sysinit 实例化之后再实例化, 所以就有了 depends-on
  * 因为cacheManager用到了一个SystemSettings里的值, 而这个值在sysinit 被创建的时候才初始化, 那么cacheManager 一定要在sysinit实例化了之后再实例化
  * 
- * 
+ * 4. 关于bean的scope 一共有5种 
+ *  1) singleton：单例模式，在整个Spring IoC容器中，使用 singleton 定义的 bean 只有一个实例
+ *  2) prototype：原型模式，每次通过容器的getbean方法获取 prototype 定义的 bean 时，都产生一个新的 bean 实例
+ *  3) request：对于每次 HTTP 请求，使用 request 定义的 bean 都将产生一个新实例，即每次 HTTP 请求将会产生不同的 bean 实例
+ *  4) session：同一个 Session 共享一个 bean 实例
+ *  5) global-session：同 session 作用域不同的是，所有的Session共享一个Bean实例
  * 
  * 
  * 
