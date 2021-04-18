@@ -38,4 +38,13 @@ public class IOCTest3 {
         System.out.println(car1);
         System.out.println(car2);
     }
+
+
+    @Test
+    public void lazyTest(){
+        ApplicationContext applicationContext
+                = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        //Bean bean = applicationContext.getBean("bean",Bean.class);
+    }
 }
