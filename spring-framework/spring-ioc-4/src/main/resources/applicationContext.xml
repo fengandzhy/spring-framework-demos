@@ -10,10 +10,26 @@
        
     <context:property-placeholder location="classpath:db.properties"/>
     
-    <bean id="c3p0" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+    <bean id="c3p0" class="com.mchange.v2.c3p0.ComboPooledDataSource" lazy-init="true">
         <property name="user" value="${db.username}"/>
         <property name="password" value="${db.password}"/>
         <property name="driverClass" value="${db.driver}"/>
         <property name="jdbcUrl" value="${db.url}"/> 
-    </bean>    
+    </bean> 
+    
+    <!--*******************************************以上是引入外部properties的例子********************************************-->
+
+    <bean class="org.zhouhy.spring.bean.MyBeanPostProcessor" init-method="init" />
+    
+    <bean id="lifeCycle" class="org.zhouhy.spring.bean.LifeCycleBean" init-method="init" destroy-method="destroy">
+        <property name="id" value="1"/>
+        <property name="name" value="life"/>
+    </bean>
+    
+    <!--<bean class="org.zhouhy.spring.bean.MyBeanNameAware" init-method="init"/>-->
+
+    <!--<bean class="org.zhouhy.spring.bean.MyBeanFactoryAware" init-method="init"/>-->
+    
+    
+    
 </beans>
