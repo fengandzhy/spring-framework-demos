@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="department" class="org.zhouhy.spring.bean.Department">
+        <property name="id" value="1"/>
+        <property name="name" value="IT"/>
+    </bean>
+    
+    <bean id="employee" class="org.zhouhy.spring.bean.Employee" abstract="true">
+        <property name="department" ref="department"/>
+    </bean>
+    
+    <bean id="developer" class="org.zhouhy.spring.bean.Developer" parent="employee">
+        <property name="id" value="1"/>
+        <property name="name" value="Sam"/>
+    </bean>
+    
+    <bean id="manager" class="org.zhouhy.spring.bean.Manager" parent="employee">
+        <property name="id" value="2"/>
+        <property name="name" value="Vini"/>
+        <property name="developer" ref="developer"/>
+    </bean>
+
+
+    <!--
+        你要把user1的parent设置成department, 那你必须确保User 中必须要有相应的setter方法
+        在这个department中配置了id,name 那么你的User中就必须要有setId 和 setName方法
+    -->
+    <bean id="user1" class="org.zhouhy.spring.bean.User" parent="department"/>    
+    
+    <!--**************************************************************以上是关于abstract和parent的设置细节***********************-->
+
+    
+    
+    <bean id="sysinit" class="org.zhouhy.spring.bean.SystemInit"/>
+    <bean id="cacheManager" class="org.zhouhy.spring.bean.CacheManager"  depends-on="sysinit"/>
+    
+    
+</beans>

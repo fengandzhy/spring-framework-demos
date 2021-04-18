@@ -11,6 +11,7 @@
         <module>spring-ioc-1</module>
         <module>spring-factorymodel</module>
         <module>spring-ioc-2</module>
+        <module>spring-ioc-3</module>
     </modules>
     <packaging>pom</packaging>
 
