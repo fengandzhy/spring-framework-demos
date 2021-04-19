@@ -1,4 +1,4 @@
-package org.zhouhy.spring.entity;
+package org.zhouhy.spring.bean;
 
 public class DBParameters {
     

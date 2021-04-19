@@ -1,7 +1,7 @@
 package org.zhouhy.spring.factorybean;
 
 import org.springframework.beans.factory.FactoryBean;
-import org.zhouhy.spring.entity.DBParameters;
+import org.zhouhy.spring.bean.DBParameters;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
