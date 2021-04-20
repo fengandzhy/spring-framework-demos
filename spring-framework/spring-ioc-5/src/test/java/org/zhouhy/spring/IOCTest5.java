@@ -28,6 +28,9 @@ public class IOCTest5 {
     public void factoryTest(){
         Connection connection = applicationContext.getBean("conn",Connection.class);
         System.out.println(connection);
+
+        Connection connection1 = applicationContext.getBean("conn1",Connection.class);
+        System.out.println(connection1);
     }
 
     @Test

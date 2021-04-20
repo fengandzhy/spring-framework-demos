@@ -17,4 +17,16 @@ public class ConnectionFactory {
         } 
         return connection;
     }
+
+    public Connection createConnection1(String driver,String url,String username,String pwd){
+        Connection connection = null;
+        try {
+            Class.forName(driver);
+            connection
+                    = DriverManager.getConnection(url,username,pwd);
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        return connection;
+    }
 }

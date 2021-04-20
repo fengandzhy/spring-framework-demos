@@ -20,9 +20,19 @@
     <bean id="connection" class="org.zhouhy.spring.factorybean.ConnectionFactoryBean">
         <property name="dbParameters" ref="dbparameters"/>
     </bean>
+    
+    <!--*******************************************岁以上是factorybean的例子*************************************************-->
 
     <bean id="connfactory" class="org.zhouhy.spring.factory.ConnectionFactory"/>
     <bean id="conn" factory-bean="connfactory" factory-method="createConnection"/>
+    <bean id="conn1" factory-bean="connfactory" factory-method="createConnection1">
+        <constructor-arg type="java.lang.String" value="com.mysql.jdbc.Driver"/>
+        <constructor-arg type="java.lang.String" value="jdbc:mysql://127.0.0.1:3306/spring-framework?useSSL=false&amp;serverTimezone=UTC"/>
+        <constructor-arg type="java.lang.String" value="root"/>
+        <constructor-arg type="java.lang.String" value="root"/>        
+    </bean>
+    
+    <!--***********************************************以上是实例工厂***************************************************************-->
 
     <bean id="dbconn" class="org.zhouhy.spring.staticfactory.StaticConnectionFactory"
           factory-method="createConnection" />
@@ -30,8 +40,10 @@
     <bean id="dbconn1" class="org.zhouhy.spring.staticfactory.StaticConnectionFactory"
           factory-method="createConnection1" >
         <constructor-arg type="java.lang.String" value="com.mysql.jdbc.Driver"/>
-        <constructor-arg type="java.lang.String" value="jdbc:mysql://127.0.0.1:3306/springframework-s?useSSL=false&amp;serverTimezone=UTC"/>
+        <constructor-arg type="java.lang.String" value="jdbc:mysql://127.0.0.1:3306/spring-framework?useSSL=false&amp;serverTimezone=UTC"/>
         <constructor-arg type="java.lang.String" value="root"/>
         <constructor-arg type="java.lang.String" value="root"/>
     </bean>
+    
+    <!--**********************************************以上是实例工厂***********************************************************-->
 </beans>

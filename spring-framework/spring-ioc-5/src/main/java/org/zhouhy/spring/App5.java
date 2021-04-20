@@ -25,6 +25,15 @@ package org.zhouhy.spring;
  * 
  * 9. 静态工厂里面的静态方法可以通过<constructor-arg type="java.lang.String" value="com.mysql.jdbc.Driver"/>的方式传递参数
  * 
+ * 10. 实例工厂也可以用上述方法来传递参数, 但是FactoryBean的实现类当中getObject方法却无法传参.
+ * 
+ * 11. spring 创建对象要么通过调用它的有参构造器(constructor注入), 要么通过调用它的无参构造器(setter注入), 但是有一种bean创建的时候会伴有逻辑
+ * 例如Connection, 这个时候就很难通过上述两种方法来创建bean, 那么spring 提供了三种创建这种bean的方法.
+ *  1) FactoryBean
+ *  2) 实例工厂
+ *  3) 静态工厂
+ * 
+ * 
  * 
  * */
 public class App5 {
