@@ -4,12 +4,13 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 public class LifeCycleBean implements BeanNameAware,
-        BeanFactoryAware,ApplicationContextAware
+        BeanFactoryAware,ApplicationContextAware,InitializingBean
         {
     private Integer Id;
     private String name;
@@ -57,6 +58,11 @@ public class LifeCycleBean implements BeanNameAware,
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         System.out.println("In the setApplicationContext from ApplicationContextAware!");
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("In the afterPropertiesSet from InitializingBean!");
     }
 
 //    @Override

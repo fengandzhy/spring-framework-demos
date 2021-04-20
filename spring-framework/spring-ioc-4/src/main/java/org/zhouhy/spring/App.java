@@ -22,10 +22,11 @@ package org.zhouhy.spring;
  *  4) 如果 A 实现了BeanFactoryAware 接口, 则调用setBeanFactory 方法
  *  5) 如果 A 实现了ApplicationContextAware 接口, 则调用setApplicationContext 方法
  *  6) 如果有 B 实现了 BeanPostProcessor 接口, 则调用 B 的 postProcessBeforeInitialization
- *  7) 如果 A 设置了init-method 方法, 则调用该方法, 注意该方法不能有参数
- *  8) 如果有 B 实现了 BeanPostProcessor 接口, 则调用 B 的 postProcessAfterInitialization
- *  9) 使用bean, 本例中的 System.out.println(bean.getName());
- *  10) 当容器销毁时, 调用destroy-method, 这个方法也是没有参数的
+ *  7) 如果 A 实现了 InitializingBean 接口, 则调用afterPropertiesSet 方法
+ *  8) 如果 A 设置了init-method 方法, 则调用该方法, 注意该方法不能有参数
+ *  9) 如果有 B 实现了 BeanPostProcessor 接口, 则调用 B 的 postProcessAfterInitialization
+ *  10) 使用bean, 本例中的 System.out.println(bean.getName());
+ *  11) 当容器销毁时, 调用destroy-method, 这个方法也是没有参数的
  * 
  * 6. 如果A 实现了 BeanPostProcessor, 它会在所有未实现该接口的bean被创建之前就被创建出来, 
  * 而且它被创建的时候不会调用自己的 postProcessBeforeInitialization 和 postProcessAfterInitialization
