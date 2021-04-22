@@ -32,4 +32,11 @@ public class IOCTest6 {
         System.out.println(lifeCycleBean.getBean());
         applicationContext.close();
     }
+
+    @Test
+    public void AutowireTest(){
+        ConfigurableApplicationContext applicationContext
+                = new ClassPathXmlApplicationContext("applicationContext.xml");
+        
+    }
 }
