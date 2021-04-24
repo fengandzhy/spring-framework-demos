@@ -16,6 +16,7 @@
         <module>spring-ioc-5</module>
         <module>spring-ioc-6</module>
         <module>spring-ioc-7</module>
+        <module>spring-proxy</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -32,6 +33,12 @@
             <artifactId>spring-test</artifactId>
             <version>5.1.14.RELEASE</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>2.2</version>
         </dependency>
 
 
