@@ -28,7 +28,7 @@ package org.zhouhy.spring;
  *      
  * 5. spring-test 需要依赖 4.12 以上的junit  
  * 
- * 
+ * 6. @Bean 注解必须要结合 @Configuration 注解使用, @Lazy 表示延迟加载, @Scope 表示bean的作用域
  * 
  * 
  * */

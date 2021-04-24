@@ -15,6 +15,7 @@
         <module>spring-ioc-4</module>
         <module>spring-ioc-5</module>
         <module>spring-ioc-6</module>
+        <module>spring-ioc-7</module>
     </modules>
     <packaging>pom</packaging>
 
