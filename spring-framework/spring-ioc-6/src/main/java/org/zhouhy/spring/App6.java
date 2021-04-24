@@ -20,6 +20,14 @@ package org.zhouhy.spring;
  *    
  * 2. 如果这个值@Value("tiger")设置到了set方法上, 那么spring 会调用set方法来为属性赋值, 如果它设置到了属性上, 则就代表spring会通过反射来为属性赋值
  * 
+ * 3. @Inject 这个注解要加入另外一个 maven 依赖 javax.inject 
+ * 
+ * 4. 要在Junit中测试@Autowired @Resource @Inject 在junit class 之前必须加入, 具体请参考本例的test 
+ *      @RunWith(SpringJUnit4ClassRunner.class)
+ *      @ContextConfiguration("classpath:applicationContext.xml")
+ *      
+ * 5. spring-test 需要依赖 4.12 以上的junit  
+ * 
  * 
  * 
  * 
