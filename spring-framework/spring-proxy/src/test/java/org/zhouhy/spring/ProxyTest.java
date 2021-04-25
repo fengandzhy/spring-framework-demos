@@ -26,24 +26,24 @@ public class ProxyTest {
 
     @Test
     public void dynamicProxyTest(){
-//        MyTransaction transaction = new MyTransaction();
-//        UserService userService = new UserServiceImpl();
-//        MyInvocationHandler invocationHandler = new MyInvocationHandler(userService,transaction);
-//        
-//        UserService service = (UserService) Proxy.newProxyInstance(userService.getClass().getClassLoader()
-//                ,userService.getClass().getInterfaces(),invocationHandler);
-//        service.add(null);
-//        service.del(1);
+        MyTransaction transaction = new MyTransaction();
+        UserService userService = new UserServiceImpl();
+        MyInvocationHandler invocationHandler = new MyInvocationHandler(userService,transaction);
+
+        UserService service = (UserService) Proxy.newProxyInstance(userService.getClass().getClassLoader()
+                ,userService.getClass().getInterfaces(),invocationHandler);
+        service.add(null);
+        service.del(1);
 
     }
 
 
     @Test
     public void cglibProxyTest(){
-//        MyTransaction transaction = new MyTransaction();
-//        CglibProxy proxy = new CglibProxy(transaction);
-//        UserServiceImpl userService = (UserServiceImpl) proxy.getProxy(UserServiceImpl.class);
-//        userService.add(null);
-//        userService.del(2);
+        MyTransaction transaction = new MyTransaction();
+        CglibProxy proxy = new CglibProxy(transaction);
+        UserServiceImpl userService = (UserServiceImpl) proxy.getProxy(UserServiceImpl.class);
+        userService.add(null);
+        userService.del(2);
     }
 }
