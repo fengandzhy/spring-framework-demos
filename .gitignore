@@ -73,6 +73,7 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.iml
+*.log
 # Windows shortcuts
 *.lnk
 ### Maven template
