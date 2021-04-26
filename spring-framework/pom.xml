@@ -18,6 +18,7 @@
         <module>spring-ioc-7</module>
         <module>spring-proxy</module>
         <module>spring-aop-1</module>
+        <module>spring-mybatis</module>
     </modules>
     <packaging>pom</packaging>
 

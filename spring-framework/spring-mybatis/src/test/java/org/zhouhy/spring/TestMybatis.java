@@ -1,0 +1,28 @@
+package org.zhouhy.spring;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Test;
+import org.zhouhy.spring.dao.UserDao;
+import org.zhouhy.spring.entity.User;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+public class TestMybatis {
+    
+    @Test
+    public void saveTest() throws IOException {
+        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);        
+        SqlSession session = sqlSessionFactory.openSession();
+        UserDao dao = session.getMapper(UserDao.class);
+        User user = new User();
+        user.setUsername("ABC");
+        user.setPassword("123456");
+        dao.save(user);
+        session.commit();        
+    }
+}
