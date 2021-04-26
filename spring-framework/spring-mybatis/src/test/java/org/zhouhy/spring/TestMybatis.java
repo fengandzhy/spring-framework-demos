@@ -5,6 +5,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.zhouhy.spring.dao.UserDao;
 import org.zhouhy.spring.entity.User;
 
@@ -24,5 +26,21 @@ public class TestMybatis {
         user.setPassword("123456");
         dao.save(user);
         session.commit();        
+    }
+
+
+    @Test
+    public void springMabatisSaveTest() throws IOException {
+        ApplicationContext applicationContext 
+                = new ClassPathXmlApplicationContext("applicationContext.xml");
+        
+        UserDao userDao = applicationContext.getBean("userDao",UserDao.class);
+        User user = new User();
+        user.setUsername("BCD");
+        user.setPassword("885948");
+        userDao.save(user);
+        
+        
+        
     }
 }
