@@ -19,6 +19,7 @@
         <module>spring-proxy</module>
         <module>spring-aop-1</module>
         <module>spring-mybatis</module>
+        <module>spring-transaction-1</module>
     </modules>
     <packaging>pom</packaging>
 
