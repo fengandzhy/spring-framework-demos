@@ -14,5 +14,7 @@ public class AOPTest1 {
         Calculator calculator = applicationContext.getBean("calculator",Calculator.class);
         calculator.add(1,3);
         calculator.sub(2,1);
+        calculator.div(3,1);
+        calculator.div(3,0);
     }
 }

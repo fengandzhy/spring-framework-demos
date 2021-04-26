@@ -1,0 +1,41 @@
+
+ 2021-04-25 20:42:51,262 DEBUG [org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:594)] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@75bd9247  
+ 
+ 2021-04-25 20:42:51,493 DEBUG [org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:437)] Identified candidate component class: file [D:\github2\spring-framework-demos\spring-framework\spring-aop-1\target\classes\org\zhouhy\spring\aspect\LoggerAspect.class]  
+ 
+ 2021-04-25 20:42:51,494 DEBUG [org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:437)] Identified candidate component class: file [D:\github2\spring-framework-demos\spring-framework\spring-aop-1\target\classes\org\zhouhy\spring\target\impl\CaculatorImpl.class]  
+ 
+ 2021-04-25 20:42:51,528 DEBUG [org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:396)] Loaded 8 bean definitions from class path resource [applicationContext.xml]  
+ 
+ 2021-04-25 20:42:51,554 DEBUG [org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:213)] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'  
+ 
+ 2021-04-25 20:42:51,603 DEBUG [org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:213)] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'  
+ 
+ 2021-04-25 20:42:51,605 DEBUG [org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:213)] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'  
+ 
+ 2021-04-25 20:42:51,607 DEBUG [org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:213)] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'  
+ 
+ 2021-04-25 20:42:51,609 DEBUG [org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:213)] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'  
+ 
+ 2021-04-25 20:42:51,614 DEBUG [org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:213)] Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'  
+ 
+ 2021-04-25 20:42:51,695 DEBUG [org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:213)] Creating shared instance of singleton bean 'loggerAspect'  
+ 
+ 2021-04-25 20:42:51,701 DEBUG [org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:213)] Creating shared instance of singleton bean 'caculator'  
+ 
+ 2021-04-25 20:42:51,730 DEBUG [org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory.getAdvice(ReflectiveAspectJAdvisorFactory.java:243)] Found AspectJ method: public void org.zhouhy.spring.aspect.LoggerAspect.beforeMethod()  
+ 
+ 2021-04-25 20:42:51,912 INFO [org.zhouhy.spring.aspect.LoggerAspect.beforeMethod(LoggerAspect.java:19)] Before the method.  
+ 
+ 2021-04-25 20:43:21,021 INFO [org.zhouhy.spring.aspect.LoggerAspect.beforeMethod(LoggerAspect.java:19)] Before the method.  
+ 
+ 2021-04-25 20:43:45,239 INFO [org.zhouhy.spring.aspect.LoggerAspect.beforeMethod(LoggerAspect.java:19)] Before the method.  
+ 
+ 2021-04-25 20:54:33,990 INFO [org.zhouhy.spring.aspect.LoggerAspect.beforeMethod(LoggerAspect.java:20)] Before the method add  
+ 
+ 2021-04-25 20:54:33,992 INFO [org.zhouhy.spring.aspect.LoggerAspect.beforeMethod(LoggerAspect.java:20)] Before the method sub  
+ 
+ 2021-04-25 20:58:42,511 INFO [org.zhouhy.spring.aspect.LoggerAspect.beforeMethod(LoggerAspect.java:24)] Before the method add and args is [1, 3]  
+ 
+ 2021-04-25 20:58:42,519 INFO [org.zhouhy.spring.aspect.LoggerAspect.beforeMethod(LoggerAspect.java:24)] Before the method sub and args is [2, 1]  
+ 
