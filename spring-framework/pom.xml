@@ -20,6 +20,7 @@
         <module>spring-aop-1</module>
         <module>spring-mybatis</module>
         <module>spring-transaction-1</module>
+        <module>spring-aop-2</module>
     </modules>
     <packaging>pom</packaging>
 
