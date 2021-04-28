@@ -31,7 +31,7 @@ package org.zhouhy.spring;
  *  6) ApplicationContext 可以实现事件传播
  *  
  * */
-public class App {
+public class IOCApp1 {
     public static void main(String[] args) {
         
     }
