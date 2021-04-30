@@ -21,6 +21,7 @@
         <module>spring-mybatis</module>
         <module>spring-transaction-1</module>
         <module>spring-aop-2</module>
+        <module>spring-transaction-2</module>
     </modules>
     <packaging>pom</packaging>
 
