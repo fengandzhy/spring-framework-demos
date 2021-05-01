@@ -22,6 +22,7 @@
         <module>spring-transaction-1</module>
         <module>spring-aop-2</module>
         <module>spring-transaction-2</module>
+        <module>spring-aop-3</module>
     </modules>
     <packaging>pom</packaging>
 
