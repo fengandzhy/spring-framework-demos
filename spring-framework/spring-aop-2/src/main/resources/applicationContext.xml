@@ -11,8 +11,27 @@
        http://www.springframework.org/schema/aop 
        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+    <bean id="developer" class="org.zhouhy.spring.target.impl.Develloper"/>
+    
+    <bean id="developerHelper" class="org.zhouhy.spring.aspect.DeveloperHelper"/>
     
     
-
+    <aop:config>
+        <aop:pointcut id="devPointer" expression="execution(* org.zhouhy.spring.target.impl.Develloper.*(..))"/>
+        <aop:advisor advice-ref="developerHelper" pointcut-ref="devPointer"/>
+    </aop:config> 
+    
+    
+    <bean id="managerHelper" class="org.zhouhy.spring.aspect.ManagerHelper"/>
+    
+    <aop:config>
+        <aop:pointcut expression="execution(* org.zhouhy.spring.target.impl.Manager.*(..))" id="managerPointcut"/>
+        <aop:aspect ref="managerHelper">
+            <aop:before method="beforeWork" pointcut-ref="managerPointcut"/>
+            <aop:after method="afterWork" pointcut-ref="managerPointcut"/>
+        </aop:aspect>
+    </aop:config>
+    
+    <bean id="manager" class="org.zhouhy.spring.target.impl.Manager"/>
     
 </beans>
