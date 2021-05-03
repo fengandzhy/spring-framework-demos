@@ -15,6 +15,7 @@ import java.io.InputStream;
 
 public class TestMybatis {
     
+    //传统的mybatis使用方法
     @Test
     public void saveTest() throws IOException {
         InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
@@ -29,18 +30,15 @@ public class TestMybatis {
     }
 
 
+    //跟spring整合之后的mybatis
     @Test
     public void springMabatisSaveTest() throws IOException {
         ApplicationContext applicationContext 
-                = new ClassPathXmlApplicationContext("applicationContext.xml");
-        
+                = new ClassPathXmlApplicationContext("applicationContext.xml");        
         UserDao userDao = applicationContext.getBean("userDao",UserDao.class);
         User user = new User();
         user.setUsername("BCD");
         user.setPassword("885948");
-        userDao.save(user);
-        
-        
-        
+        userDao.save(user);        
     }
 }
