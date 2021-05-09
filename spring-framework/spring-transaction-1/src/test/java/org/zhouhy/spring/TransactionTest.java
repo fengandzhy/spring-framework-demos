@@ -11,6 +11,8 @@ import org.zhouhy.spring.dao.UserDao;
 import org.zhouhy.spring.entity.Product;
 import org.zhouhy.spring.entity.User;
 
+import java.util.List;
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
@@ -32,5 +34,14 @@ public class TransactionTest {
         ProductDao productDao = applicationContext.getBean("productDao",ProductDao.class);
         Product product = new Product("2",1000,123.00);
         productDao.save(product);
+    }
+
+    @Test
+    public void searchProductTest(){
+        ApplicationContext applicationContext
+                = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ProductDao productDao = applicationContext.getBean("productDao",ProductDao.class);
+        List<Product> products = productDao.searchByProdId("1");
+        System.out.println(products.get(0));
     }
 }

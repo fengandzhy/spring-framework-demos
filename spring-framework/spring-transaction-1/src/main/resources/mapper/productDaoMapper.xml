@@ -6,4 +6,8 @@
     <insert id="save" parameterType="product">
         insert into t_product(prodId,stock,price) values (#{prodId},#{stock},#{price}) 
     </insert>
+
+    <select  id="searchByProdId" parameterType="java.lang.String" resultType="product">
+        select p.prodId,p.stock,p.price from t_product p where p.prodId=#{prodId} 
+    </select >
 </mapper>
