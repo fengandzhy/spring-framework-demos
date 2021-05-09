@@ -17,6 +17,10 @@ package org.zhouhy.spring;
  * 
  * 8. 我们思考使用aop的目的，就是不改变源码的前提下，往一个方法的前后插入一个代码块
  * 
+ * 9. 通过aop命名空间的<aop:aspectj-autoproxy />声明自动为spring容器中那些配置@aspectJ切面的bean创建代理，织入切面。
+ * 
+ * 10. 可以用@Order来指定切面的优先级
+ * 
  * */
 public class AopApp1 {
     public static void main(String[] args) {

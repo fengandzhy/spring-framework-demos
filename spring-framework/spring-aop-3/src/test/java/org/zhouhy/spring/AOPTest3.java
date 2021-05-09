@@ -5,16 +5,15 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.zhouhy.spring.target.Calculator;
 
-public class AOPTest1 {
-    
+public class AOPTest3 {
+
     @Test
     public void CalculatorTest(){
         ApplicationContext applicationContext
                 = new ClassPathXmlApplicationContext("applicationContext.xml");
         Calculator calculator = applicationContext.getBean("calculator",Calculator.class);
-        calculator.add(1,3);
-        calculator.sub(2,1);
-        calculator.div(3,1);
-        //calculator.div(3,0);
+        calculator.add(2,2);
+        calculator.sub(3,4);
+        calculator.div(6,2);        
     }
 }
