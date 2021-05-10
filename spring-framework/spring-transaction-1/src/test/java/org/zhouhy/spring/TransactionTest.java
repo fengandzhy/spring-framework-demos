@@ -56,4 +56,16 @@ public class TransactionTest {
         int a = userDao.updateBalance(user);
         System.out.println(a);
     }
+
+    @Test
+    public void updateStockTest(){
+        ApplicationContext applicationContext
+                = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ProductDao productDao = applicationContext.getBean("productDao",ProductDao.class);
+        Product product = new Product();
+        product.setId(8);
+        product.setStock(5);
+        int a = productDao.updateStock(product);
+        System.out.println(a);
+    }
 }

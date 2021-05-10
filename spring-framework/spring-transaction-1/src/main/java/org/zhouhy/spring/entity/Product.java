@@ -9,9 +9,10 @@ public class Product implements Serializable {
     private Integer stock;
     private double price;
 
-    
-    
-    public Product(String prodId,Integer stock,double price){
+    public Product() {
+    }
+
+    public Product(String prodId, Integer stock, double price){
         this.prodId = prodId;
         this.stock = stock;
         this.price = price;
