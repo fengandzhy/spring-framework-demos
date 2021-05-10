@@ -6,4 +6,8 @@
     <insert id="save" parameterType="user">
         insert into t_user(username,password,balance) values (#{username},#{password},#{balance}) 
     </insert>
+
+    <update id="updateBalance" parameterType="user">
+        update t_user set balance = #{balance} where id= #{id} 
+    </update>
 </mapper>

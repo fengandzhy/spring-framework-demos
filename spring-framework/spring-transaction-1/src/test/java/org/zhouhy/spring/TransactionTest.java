@@ -44,4 +44,16 @@ public class TransactionTest {
         List<Product> products = productDao.searchByProdId("1");
         System.out.println(products.get(0));
     }
+
+    @Test
+    public void updateBalanceTest(){
+        ApplicationContext applicationContext
+                = new ClassPathXmlApplicationContext("applicationContext.xml");
+        UserDao userDao = applicationContext.getBean("userDao",UserDao.class);
+        User user = new User();
+        user.setId(7);
+        user.setBalance(200);
+        int a = userDao.updateBalance(user);
+        System.out.println(a);
+    }
 }

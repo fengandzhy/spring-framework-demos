@@ -10,4 +10,6 @@ public interface ProductDao {
     void save(Product prod);
     
     List<Product> searchByProdId(String prodId);
+    
+    int updateStock(Product prod);
 }

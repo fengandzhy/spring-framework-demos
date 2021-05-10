@@ -6,6 +6,6 @@ public interface UserDao {
 
     void save(User user);
     
-    int buy();
+    int updateBalance(User user);
     
 }
