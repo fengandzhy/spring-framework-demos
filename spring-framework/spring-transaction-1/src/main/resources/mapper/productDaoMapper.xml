@@ -8,7 +8,7 @@
     </insert>
 
     <select  id="searchByProdId" parameterType="java.lang.String" resultType="product">
-        select p.prodId,p.stock,p.price from t_product p where p.prodId=#{prodId} 
+        select p.id,p.prodId,p.stock,p.price from t_product p where p.prodId=#{prodId} 
     </select >
 
     <update id="updateStock" parameterType="product">

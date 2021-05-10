@@ -1,9 +1,15 @@
 package org.zhouhy.spring.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.zhouhy.spring.dao.ProductDao;
 import org.zhouhy.spring.dao.UserDao;
+import org.zhouhy.spring.entity.Product;
+import org.zhouhy.spring.entity.User;
 
+import java.util.List;
+
+@Service
 public class BuyService {
     
     @Autowired
@@ -12,9 +18,20 @@ public class BuyService {
     @Autowired
     private ProductDao productDao;
     
-    public void buy(String prodId,Integer quantity){
-        
-        
+    public void buy(String prodId,Integer quantity,String username){
+
+        List<Product> products = productDao.searchByProdId(prodId);
+        Product product = products.get(0);
+        int stock = product.getStock()-quantity;
+        if(stock<0){
+            throw new RuntimeException("库存不足！");
+        }
+        List<User> users = userDao.searchByUsername(username);
+        User user = users.get(0);
+        double balance = user.getBalance() -product.getPrice()*quantity;
+        if(balance<0){
+            throw new RuntimeException("余额不足！");
+        }       
         
     }
 }

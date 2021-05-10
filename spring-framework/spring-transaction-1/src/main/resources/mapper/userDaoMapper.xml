@@ -7,6 +7,10 @@
         insert into t_user(username,password,balance) values (#{username},#{password},#{balance}) 
     </insert>
 
+    <select id="searchByUsername" parameterType="java.lang.String" resultType="user">
+        select u.id,u.username,u.balance from  t_user u where u.username=#{username} 
+    </select>
+
     <update id="updateBalance" parameterType="user">
         update t_user set balance = #{balance} where id= #{id} 
     </update>
