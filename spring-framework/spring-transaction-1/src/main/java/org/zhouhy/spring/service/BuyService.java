@@ -26,12 +26,20 @@ public class BuyService {
         if(stock<0){
             throw new RuntimeException("库存不足！");
         }
+        Product prod = new Product();
+        prod.setId(product.getId());
+        prod.setStock(stock);
+        productDao.updateStock(prod);
+        
         List<User> users = userDao.searchByUsername(username);
         User user = users.get(0);
         double balance = user.getBalance() -product.getPrice()*quantity;
         if(balance<0){
             throw new RuntimeException("余额不足！");
         }       
-        
+        User u = new User();
+        u.setId(user.getId());
+        u.setBalance(balance);
+        userDao.updateBalance(u);
     }
 }
