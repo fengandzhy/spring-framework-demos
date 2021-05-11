@@ -21,7 +21,7 @@ package org.zhouhy.spring;
  * 6. 关于食物的propagation 属性一般情况下默认的是REQUIRED, 当设置成@Transactional(propagation=Propagation)
  * 表名这里面的事务和外面包裹它的事务融为一体, 也就是说它融合进外面的事务当中去了.
  * 
- * 
+ * 7. 本例中一如jdbc的依赖, 是为了让它找到datasource
  * 
  * */
 public class TransactionApp {
