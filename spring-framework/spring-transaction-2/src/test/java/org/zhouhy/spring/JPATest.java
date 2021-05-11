@@ -36,6 +36,6 @@ public class JPATest {
 
     @Test
     public void buyTest(){
-        buyService.buy("1",3,"Sam");
+        buyService.buy("1",1,"Sam");
     }
 }

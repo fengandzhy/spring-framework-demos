@@ -23,6 +23,12 @@ package org.zhouhy.spring;
  * 
  * 7. 本例中一如jdbc的依赖, 是为了让它找到datasource
  * 
+ * 8. 关于spring 整合 Mybatis 有以下几个步骤
+ *  1) 引入相关依赖, 相关依赖请参考本例
+ *  2) 配置 dataSource, sqlSessionFactoryBean, scanner
+ *  3) 编写相关的Dao类
+ *  4) 编写Mapper.xml文件
+ * 
  * */
 public class TransactionApp {
     public static void main(String[] args) {
