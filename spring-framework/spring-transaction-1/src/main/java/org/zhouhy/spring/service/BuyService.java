@@ -2,6 +2,7 @@ package org.zhouhy.spring.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.zhouhy.spring.dao.ProductDao;
 import org.zhouhy.spring.dao.UserDao;
 import org.zhouhy.spring.entity.Product;
@@ -18,6 +19,7 @@ public class BuyService {
     @Autowired
     private ProductDao productDao;
     
+    @Transactional
     public void buy(String prodId,Integer quantity,String username){
 
         List<Product> products = productDao.searchByProdId(prodId);
