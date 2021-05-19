@@ -2,9 +2,11 @@ package org.zhouhy.spring.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.zhouhy.spring.entity.UserBean;
 
 @Configuration
+@Import(MyConfiguration2.class)
 public class MyConfiguration1 {
     
     public MyConfiguration1(){
