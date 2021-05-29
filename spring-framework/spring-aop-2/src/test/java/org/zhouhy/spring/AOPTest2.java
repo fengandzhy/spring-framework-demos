@@ -10,6 +10,7 @@ public class AOPTest2 {
     @Test
     public void developerHelperTest(){
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        
         Employee developer = context.getBean("developer",Employee.class);
         developer.work();
     }
