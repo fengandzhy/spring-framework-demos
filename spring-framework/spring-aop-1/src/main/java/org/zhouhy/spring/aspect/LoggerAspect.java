@@ -23,12 +23,12 @@ public class LoggerAspect {
      * 第三个星号代表所有的方法
      * 
      * */
-    @Pointcut("execution(* org.zhouhy.spring.target.*.*(..))")
+    @Pointcut("execution(* org.zhouhy.spring.targets.*.*(..))")
     public void pointcut() {
     }
     
     
-    //@Before("execution(public int org.zhouhy.spring.target.impl.CalculatorImpl.*(int,int))")
+    //@Before("execution(public int org.zhouhy.spring.targets.impl.CalculatorImpl.*(int,int))")
     @Before("pointcut()")
     public void beforeAdvice(JoinPoint joinPoint){
         String method = joinPoint.getSignature().getName();

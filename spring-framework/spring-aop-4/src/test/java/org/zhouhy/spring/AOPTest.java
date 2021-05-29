@@ -3,7 +3,7 @@ package org.zhouhy.spring;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.zhouhy.spring.target.Calculator;
+import org.zhouhy.spring.targets.Calculator;
 
 public class AOPTest {
     

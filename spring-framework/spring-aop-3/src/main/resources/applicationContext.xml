@@ -11,11 +11,11 @@
        http://www.springframework.org/schema/aop 
        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean id="calculator" class="org.zhouhy.spring.target.impl.CalculatorImpl"/>
+    <bean id="calculator" class="org.zhouhy.spring.targets.impl.CalculatorImpl"/>
     <bean id="loggerAspect" class="org.zhouhy.spring.aspect.LoggerAspect"/>
     
     <aop:config>
-        <aop:pointcut id="myPointcut0" expression="execution(* org.zhouhy.spring.target.*.*(..))"/>
+        <aop:pointcut id="myPointcut0" expression="execution(* org.zhouhy.spring.targets.*.*(..))"/>
         <aop:aspect id="loggerAspect" ref="loggerAspect" order="0">
             <aop:before method="beforeAdvice" pointcut-ref="myPointcut0" />
             <aop:after method="afterAdvice" pointcut-ref="myPointcut0" />
