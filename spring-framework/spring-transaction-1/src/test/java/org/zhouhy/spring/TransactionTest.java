@@ -87,4 +87,9 @@ public class TransactionTest {
     public void buyTest(){
         buyService.buy("1",3,"Sam");
     }
+
+    @Test
+    public void buyTest1(){
+        buyService.buy(3,"Sam","1");
+    }
 }

@@ -1,6 +1,8 @@
 package org.zhouhy.spring.service;
 
+import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.zhouhy.spring.dao.ProductDao;
@@ -11,6 +13,7 @@ import org.zhouhy.spring.entity.User;
 import java.util.List;
 
 @Service
+@EnableAspectJAutoProxy(exposeProxy = true)
 public class BuyService {
     
     @Autowired
@@ -18,6 +21,13 @@ public class BuyService {
     
     @Autowired
     private ProductDao productDao;
+    
+    
+    //@Transactional
+    public void buy(Integer quantity,String username,String prodId){
+        //this.buy(prodId,quantity,username);
+        ((BuyService)AopContext.currentProxy()).buy(prodId,quantity,username);
+    }
     
     @Transactional
     public void buy(String prodId,Integer quantity,String username){
