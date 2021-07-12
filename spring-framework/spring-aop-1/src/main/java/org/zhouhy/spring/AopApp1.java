@@ -21,6 +21,7 @@ package org.zhouhy.spring;
  * 
  * 10. 可以用@Order来指定切面的优先级
  * 
+ * 11. 这个LoggerAspect类里的pointcut()函数就是用来告诉切面哪个地方做切入点的.
  * */
 public class AopApp1 {
     public static void main(String[] args) {
