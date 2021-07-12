@@ -18,10 +18,12 @@ package org.zhouhy.spring;
  * 6. application.getBean("&connection") 才是返回的真实的ConnectionFactoryBean 方法
  * 
  * 7. 用实例工厂配置Connection 必须完成两个配置, factory-bean 和 factory-method 其中factory-bean 是实例工厂, 
- * factory-method 是该工厂负责创建bean的方法. 
+ * factory-method 是该工厂负责创建bean的方法. 例如创建conn的bean, connfactory就是实例工厂而createConnection就是创建这个
+ * bean的具体方法. applicationContext.getBean("conn",Connection.class); 而是通过connfactory来创建的实例
  * 
  * 8. 静态工厂的方法必须是静态的, 如果一个bean只配置factory-method而没有配置factory-bean 那么它本身就是一个静态工厂,
  * 那么ctx=application.getBean("dbconn"); 得到的就是factory-method创建的对象. 
+ * 这里静态工厂创建对象的方法是静态方法, 跟上面实例工厂用实例方法创建对象不同.
  * 
  * 9. 静态工厂里面的静态方法可以通过<constructor-arg type="java.lang.String" value="com.mysql.jdbc.Driver"/>的方式传递参数
  * 

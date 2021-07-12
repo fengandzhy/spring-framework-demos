@@ -38,7 +38,7 @@ package org.zhouhy.spring;
  * postProcessBeforeInitialization 和 postProcessAfterInitialization 
  * 
  * */
-public class App {
+public class IOCApp4 {
     public static void main(String[] args) {
         
     }
