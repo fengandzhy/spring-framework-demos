@@ -1,4 +1,4 @@
 package org.zhouhy.spring;
 
-public class App {
+public class AOPApp4 {
 }

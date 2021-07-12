@@ -10,6 +10,7 @@ public class ActionListener implements ApplicationListener {
     @Override
     public void onApplicationEvent(ApplicationEvent event) {
         if(event instanceof ActionEvent){
+            System.out.println(event);
             log.info(event.toString());
         }
     }
