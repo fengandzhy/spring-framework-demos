@@ -11,16 +11,19 @@
        http://www.springframework.org/schema/aop 
        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean id="calculator" class="org.zhouhy.spring.targets.impl.CalculatorImpl"/>
-    <bean id="loggerAspect" class="org.zhouhy.spring.aspect.LoggerAspect"/>
+<!--    <bean id="calculator" class="org.zhouhy.spring.targets.impl.CalculatorImpl"/>-->
+<!--    <bean id="loggerAspect" class="org.zhouhy.spring.aspect.LoggerAspect"/>-->
 
-    <aop:config>
-        <aop:pointcut id="myPointcut0" expression="execution(* org.zhouhy.spring.targets.*.*(..))"/>
-        <aop:aspect id="loggerAspect" ref="loggerAspect" order="0">
-            <aop:before method="beforeAdvice" pointcut-ref="myPointcut0" />
-            <aop:after method="afterAdvice" pointcut-ref="myPointcut0" />
-            <aop:after-returning method="returnAdvice"  pointcut-ref="myPointcut0" returning="result"/>
-            <aop:after-throwing method="throwingAdvice" pointcut-ref="myPointcut0" throwing="ex"/>
-        </aop:aspect>
-    </aop:config>
+<!--    <aop:config>-->
+<!--        <aop:pointcut id="myPointcut0" expression="execution(* org.zhouhy.spring.targets.*.*(..))"/>-->
+<!--        <aop:aspect id="loggerAspect" ref="loggerAspect" order="0">-->
+<!--            <aop:before method="beforeAdvice" pointcut-ref="myPointcut0" />-->
+<!--            <aop:after method="afterAdvice" pointcut-ref="myPointcut0" />-->
+<!--            <aop:after-returning method="returnAdvice"  pointcut-ref="myPointcut0" returning="result"/>-->
+<!--            <aop:after-throwing method="throwingAdvice" pointcut-ref="myPointcut0" throwing="ex"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+    <context:component-scan  base-package="org.zhouhy.spring"/>
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+    
 </beans>

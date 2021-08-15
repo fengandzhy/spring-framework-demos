@@ -9,7 +9,7 @@ package org.zhouhy.spring;
  * 
  * 4. Pointcut 切点, 相当于代理对象的方法被调用的条件. AOP通过“切点”定位特定的连接点。连接点相当于数据库中的记录，而切点相当于查询条件。
  * 
- * 5. Advice 通知, 通知是指拦截到连接点之后要执行的代码，包括了“around”、“before”和“after”等不同类型的通知。
+ * 5. Advice 通知, 通知是指拦截到连接点之后要执行的代码，包括了"around"、"before"和"after"等不同类型的通知。
  * 
  * 6. Weaving 织入, 织入是将切面和业务逻辑对象连接起来, 并创建通知代理的过程
  * 
@@ -22,6 +22,8 @@ package org.zhouhy.spring;
  * 10. 可以用@Order来指定切面的优先级
  * 
  * 11. 这个LoggerAspect类里的pointcut()函数就是用来告诉切面哪个地方做切入点的.
+ * 
+ * 
  * */
 public class AopApp1 {
     public static void main(String[] args) {
