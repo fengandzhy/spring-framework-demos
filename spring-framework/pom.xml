@@ -25,6 +25,8 @@
         <module>spring-aop-3</module>
         <module>spring-myconfiguration</module>
         <module>spring-aop-4</module>
+        <module>spring-ioc-8</module>
+
     </modules>
     <packaging>pom</packaging>
 
