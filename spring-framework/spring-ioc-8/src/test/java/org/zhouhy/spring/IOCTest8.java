@@ -20,4 +20,6 @@ public class IOCTest8 {
         System.out.println(b.getBeanA());
         System.out.println(b.getBeanC());
     }
+    
+    
 }
