@@ -19,21 +19,21 @@
         <property name="password" value="root"/>
     </bean>
 
-    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="org.zhouhy.spring.entity"/>
-        <property name="mapperLocations">
-            <list>
-                <value>classpath:/mapper/*Mapper.xml</value>
-            </list>
-        </property>
-    </bean>
+<!--    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">-->
+<!--        <property name="dataSource" ref="dataSource"/>-->
+<!--        <property name="typeAliasesPackage" value="org.zhouhy.spring.entity"/>-->
+<!--        <property name="mapperLocations">-->
+<!--            <list>-->
+<!--                <value>classpath:/mapper/*Mapper.xml</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
 
-    <bean id="scanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"></property>
-        <property name="basePackage" value="org.zhouhy.spring.dao"/>
-    </bean>
-    
+<!--    <bean id="scanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+<!--        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"></property>-->
+<!--        <property name="basePackage" value="org.zhouhy.spring.dao"/>-->
+<!--    </bean>-->
+<!--    -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
