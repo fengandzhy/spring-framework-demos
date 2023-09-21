@@ -102,10 +102,10 @@
                 <version>3.8.1</version>
                 <configuration>
                     <release>11</release>
-                    <compilerArgs>
-                        <arg>--add-modules</arg>
-                        <arg>java.xml.ws.annotation</arg>
-                    </compilerArgs>
+<!--                    <compilerArgs>-->
+<!--                        <arg>&#45;&#45;add-modules</arg>-->
+<!--                        <arg>java.xml.ws.annotation</arg>-->
+<!--                    </compilerArgs>-->
                 </configuration>
             </plugin>
         </plugins>
