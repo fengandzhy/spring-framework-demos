@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring-transaction-1</module>
+        <module>spring-aop-1</module>
     </modules>
 
     <properties>
