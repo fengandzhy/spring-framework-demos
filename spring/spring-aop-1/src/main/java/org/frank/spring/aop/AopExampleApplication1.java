@@ -1,6 +1,6 @@
 package org.frank.spring.aop;
 
-import org.frank.spring.aop.aspect.LoggingAspect;
+
 import org.frank.spring.aop.config.AppConfig;
 import org.frank.spring.aop.target.UserService;
 import org.springframework.context.ApplicationContext;
