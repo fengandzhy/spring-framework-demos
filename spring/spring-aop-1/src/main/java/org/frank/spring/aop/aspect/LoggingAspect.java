@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 
 // 使用@Aspect注解标注这是一个切面
 @Aspect
-@Component
+//@Component
 public class LoggingAspect {
     
     // 定义一个切点，匹配UserService中的所有方法
-    @Pointcut("execution(* org.frank.spring.aop.target.UserService.*(..))")
+    @Pointcut("execution(* org.frank.spring.aop.target.impl.UserServiceImpl.*(..))")    
     public void userServiceMethods() {}
 
     // 在方法执行之前的通知
